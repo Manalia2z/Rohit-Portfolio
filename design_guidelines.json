@@ -1,0 +1,176 @@
+{
+  "theme": "Dark",
+  "archetype": "Archetype 2: The Performance Pro (Industrial + Dark Automotive)",
+  "color_palette": {
+    "background": {
+      "main": "#0A0A0A",
+      "surface": "#141414",
+      "surface_elevated": "#1F1F1F"
+    },
+    "text": {
+      "primary": "#FFFFFF",
+      "secondary": "#A1A1AA",
+      "muted": "#71717A"
+    },
+    "primary": {
+      "main": "#FF3B30",
+      "hover": "#FF5A52",
+      "glow": "rgba(255, 59, 48, 0.5)"
+    },
+    "accent": {
+      "blue": "#007AFF",
+      "silver": "#C0C0C0"
+    },
+    "borders": {
+      "subtle": "#27272A",
+      "active": "#FF3B30"
+    }
+  },
+  "typography": {
+    "headings": {
+      "font_family": "Chakra Petch, sans-serif",
+      "weights": ["600", "700"],
+      "style": "Industrial, technical, sharp"
+    },
+    "body": {
+      "font_family": "JetBrains Mono, monospace",
+      "weights": ["400", "500"],
+      "style": "Code-like, precise, mechanical"
+    },
+    "sizes": {
+      "h1": "text-4xl sm:text-5xl lg:text-6xl tracking-tighter uppercase",
+      "h2": "text-2xl sm:text-3xl lg:text-4xl tracking-tight uppercase",
+      "h3": "text-xl sm:text-2xl tracking-tight",
+      "body": "text-base leading-relaxed",
+      "overline": "text-xs tracking-[0.2em] uppercase"
+    }
+  },
+  "layout_and_spacing": {
+    "container": "max-w-7xl mx-auto px-6 sm:px-8 md:px-12",
+    "section_spacing": "py-24 sm:py-32",
+    "grid_system": "grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8",
+    "bento_styles": {
+      "hero_span": "col-span-1 md:col-span-8",
+      "widget_span": "col-span-1 md:col-span-4"
+    }
+  },
+  "sections_and_content": [
+    {
+      "id": "hero",
+      "title": "Hero Section",
+      "content": "ROHIT RAJENDRA DHONGADE. Mechanical Engineer & Automotive Technician.",
+      "visuals": "Dark luxury car / Mercedes grille background with subtle zoom/parallax. Framer motion entrance. CSS 3D floating text.",
+      "layout": "Centered or bold asymmetric overlay with heavy typography. Blueprint SVG lines fading in."
+    },
+    {
+      "id": "about",
+      "title": "Profile / About Me",
+      "content": "Mechanical Engineer, Automotive Technician. Silhouette image.",
+      "visuals": "Man silhouette dark. Tachometer-inspired accent elements.",
+      "layout": "Grid split: 4 cols image, 8 cols text. High contrast."
+    },
+    {
+      "id": "skills",
+      "title": "Skills Dashboard",
+      "content": "Automotive Maintenance & Repair, Mechanical Diagnostics, Preventive Maintenance, Workshop Tools Handling, Quality & Safety, Report Writing, Customer Handling",
+      "visuals": "Dashboard control room aesthetic. Progress bars looking like rev counters (RPM). Animated from 0 to target.",
+      "layout": "Bento grid of skill cards."
+    },
+    {
+      "id": "experience",
+      "title": "Work Experience",
+      "content": "B.U. Bhandari Mercedes-Benz Pune (Intern) + Modi Motors Hyundai Baner Pune (Technician).",
+      "visuals": "Timeline connected by a solid 'pipe' or glowing neon red wire. Hover reveals 'engine startup' glow.",
+      "layout": "Vertical timeline with CSS 3D perspective scroll effects."
+    },
+    {
+      "id": "education",
+      "title": "Education",
+      "content": "ITI NCVT Mechanic (63.85%) + Diploma Mechanical Eng Govt Poly Awsari (64.21%).",
+      "visuals": "Card layout with metallic borders.",
+      "layout": "Two equal width cards."
+    },
+    {
+      "id": "workshop",
+      "title": "Family Workshop: Sai Service",
+      "content": "Two-wheeler servicing, Repairing, Maintenance, Oil change. Location: Ahmednagar Maharashtra.",
+      "visuals": "Dimly lit workshop tools imagery. Oily/metallic texture overlays.",
+      "layout": "Large bento card or full width banner with parallax image."
+    },
+    {
+      "id": "hobbies",
+      "title": "Hobbies",
+      "content": "Bike riding & mechanics; Gaming, Turf, Cricket",
+      "visuals": "Iconography + SVG line art.",
+      "layout": "4 column grid for icons/small cards."
+    },
+    {
+      "id": "contact",
+      "title": "Contact",
+      "content": "Phone: 7741010715, Email: rohitdhongade1123@gmail.com, LinkedIn",
+      "visuals": "Dashboard console style footer.",
+      "layout": "Center aligned large typography."
+    }
+  ],
+  "motion_and_interactions": {
+    "scroll_animations": "Use Framer Motion 'whileInView' for elements. Create parallax effect on background images using useScroll and useTransform.",
+    "hover_effects": "All cards should have scale 1.02 on hover and border color change to Electric Blaze (#FF3B30).",
+    "css_3d": "Since Three.js is not allowed, use CSS perspective on containers and rotateX/rotateY based on mouse move or scroll. Use rotating SVG gears or animated SVGs representing engine pistons.",
+    "page_load": "Staggered text reveal with Framer motion, engine starting sound or fast tachometer sweep visual."
+  },
+  "ui_components": {
+    "cards": "bg-[#141414] border border-[#27272A] rounded-lg p-6 sm:p-8 backdrop-blur-md relative overflow-hidden group hover:border-[#FF3B30] transition-colors duration-300",
+    "buttons": "bg-[#FF3B30] text-white font-mono px-6 py-3 uppercase tracking-wider hover:bg-[#FF5A52] transition-colors flex items-center justify-center data-testid='cta-button'",
+    "navigation": "fixed top-0 w-full z-50 bg-[#0A0A0A]/80 backdrop-blur-xl border-b border-[#27272A]",
+    "testing": "All interactive elements MUST include data-testid (e.g., data-testid='nav-about', data-testid='skill-card-diagnostic')"
+  },
+  "media_urls": {
+    "hero_car": [
+      {
+        "url": "https://images.unsplash.com/photo-1623013438264-d176fb91ee99?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxNzV8MHwxfHNlYXJjaHwxfHxkYXJrJTIwbHV4dXJ5JTIwY2FyJTIwbWVyY2VkZXN8ZW58MHx8fHwxNzgzMTQ5NzMzfDA&ixlib=rb-4.1.0&q=85",
+        "description": "Mercedes benz logo grille dark"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1624085568108-36410cfe4d24?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxNzV8MHwxfHNlYXJjaHwyfHxkYXJrJTIwbHV4dXJ5JTIwY2FyJTIwbWVyY2VkZXN8ZW58MHx8fHwxNzgzMTQ5NzMzfDA&ixlib=rb-4.1.0&q=85",
+        "description": "Silver mercedes coupe night"
+      }
+    ],
+    "engine_mechanical": [
+      {
+        "url": "https://images.unsplash.com/photo-1720929425318-d434e1b26c35?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwyfHxjYXIlMjBlbmdpbmUlMjBkYXJrfGVufDB8fHx8MTc4MzE0OTczM3ww&ixlib=rb-4.1.0&q=85",
+        "description": "Close up engine dark"
+      },
+      {
+        "url": "https://images.pexels.com/photos/14615706/pexels-photo-14615706.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Old engine mechanical intricacies"
+      }
+    ],
+    "workshop": [
+      {
+        "url": "https://images.pexels.com/photos/7019373/pexels-photo-7019373.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Assorted tools dimly lit"
+      },
+      {
+        "url": "https://images.pexels.com/photos/7019392/pexels-photo-7019392.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Pliers wrench close up"
+      }
+    ],
+    "profile_silhouette": [
+      {
+        "url": "https://images.unsplash.com/photo-1544502062-f82887f03d1c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2ODh8MHwxfHNlYXJjaHwxfHxtYW4lMjBzaWxob3VldHRlJTIwZGFya3xlbnwwfHx8fDE3ODMxNDk3MzN8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Man silhouette dark"
+      }
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Build a single-page immersive portfolio using React, Tailwind CSS, and Framer Motion (.jsx/.js files only, NO .tsx).",
+    "Do NOT use Three.js. Instead, achieve 3D aesthetics using CSS perspective, rotateX, rotateY, translateZ combined with Framer Motion scroll position (useScroll, useTransform).",
+    "Use SVG line animations for blueprints or wireframes of cars/engines.",
+    "Implement 'data-testid' attributes on all key text elements, buttons, and navigation links for testing (e.g., data-testid='about-section', data-testid='hero-title').",
+    "Font combination: Use 'Chakra Petch' (Google Font) for bold industrial headings and 'JetBrains Mono' for technical body text.",
+    "Use the exact image URLs provided in the media_urls object; DO NOT use placeholders.",
+    "The color theme must strictly adhere to the dark Obsidian / Neon Red (#FF3B30) palette, evoking a dashboard/control room vibe.",
+    "Ensure the hero overlay is not a flat blanket; use gradients or partial masks to let the Mercedes/Car image shine through.",
+    "All cards must have a 1px solid stroke with glow effect on hover, mimicking 'Tactical Minimalism'."
+  ]
+}
