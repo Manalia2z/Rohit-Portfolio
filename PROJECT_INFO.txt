@@ -1,0 +1,194 @@
+================================================================================
+  ROHIT DHONGADE — PORTFOLIO WEBSITE
+  Project Overview · Tech Stack · Setup Instructions
+================================================================================
+
+
+1) PROJECT OVERVIEW
+--------------------------------------------------------------------------------
+A single-page immersive automotive portfolio built for Rohit Rajendra Dhongade,
+a Diploma Mechanical Engineer positioning himself as a Mechanical Technician /
+Service Advisor.
+
+The portfolio has 8 scrolling sections:
+    01. Hero            — Name, tagline, live RPM tachometer, animated
+                          blueprint car + animated racing car with fire trail.
+    02. About / Profile — Silhouette portrait, quick stats, engine cutaway.
+    03. Skills          — 8 rev-counter dials that sweep to their value.
+    04. Experience      — Mercedes-Benz + Hyundai service log on a red rail.
+    05. Education       — Diploma + ITI cards with score progress bars.
+    06. Workshop        — "SAI SERVICE" family two-wheeler workshop feature.
+    07. Hobbies         — Bike riding, Gaming, Turf, Cricket cards.
+    08. Contact         — Form + phone/email/LinkedIn/location cards.
+                          (Contact form emails are forwarded via Resend API.)
+
+Signature interactions:
+    • Fixed scroll-driven animated backdrop (car chassis blueprint,
+      engine schematic, rotating gear silhouettes, radial glow, telemetry HUD)
+    • Racing car SVG with animated flame exhaust and speed streaks
+    • Blueprint side-profile car with 3D hover tilt (CSS perspective)
+    • Live-simulated RPM meter
+    • Marquee word ticker
+    • Hover-glow cards with industrial corner ticks
+    • Fully responsive nav with smooth-scroll section jumps
+
+
+2) LANGUAGES & FRAMEWORKS USED
+--------------------------------------------------------------------------------
+FRONTEND
+    • Language        : JavaScript (JSX, React 19)
+    • Framework       : React 19 (Create React App via CRACO)
+    • Styling         : Tailwind CSS 3 + custom CSS variables
+    • Motion          : Framer Motion 11
+    • Icons           : lucide-react
+    • Toast / notify  : sonner
+    • Router          : react-router-dom 7
+    • Fonts           : Chakra Petch (headings) + JetBrains Mono (body)
+    • Graphics        : 100 % SVG + CSS 3D transforms (no Three.js)
+
+BACKEND
+    • Language        : Python 3.11
+    • Framework       : FastAPI
+    • Database        : MongoDB (via Motor async driver)
+    • Email service   : Resend (transactional email API)
+    • Validation      : Pydantic v2
+    • Server          : Uvicorn (managed by supervisor)
+
+
+3) FOLDER STRUCTURE (key files only)
+--------------------------------------------------------------------------------
+/app
+├── backend/
+│   ├── server.py                       ← FastAPI app + all routes
+│   ├── requirements.txt
+│   └── .env                            ← MONGO_URL, RESEND_API_KEY, etc.
+│
+├── frontend/
+│   ├── package.json
+│   ├── tailwind.config.js
+│   ├── .env                            ← REACT_APP_BACKEND_URL
+│   ├── public/
+│   └── src/
+│       ├── App.js                      ← Route root
+│       ├── App.css
+│       ├── index.css                   ← Fonts, theme tokens, animations
+│       ├── data/
+│       │   └── rohit.js                ← All resume content
+│       ├── pages/
+│       │   └── Portfolio.jsx           ← Section composer
+│       └── components/portfolio/
+│           ├── Nav.jsx                 ← Sticky nav + mobile drawer
+│           ├── Hero.jsx                ← Landing + racing car + RPM
+│           ├── About.jsx               ← Profile + engine cutaway
+│           ├── Skills.jsx              ← 8 tachometer dials
+│           ├── Experience.jsx          ← Timeline
+│           ├── Education.jsx           ← Two education cards
+│           ├── Workshop.jsx            ← Sai Service section
+│           ├── Hobbies.jsx             ← 4 hobby cards
+│           ├── Contact.jsx             ← Form + info cards
+│           ├── AnimatedBackdrop.jsx    ← Fixed scroll-driven bg layer
+│           ├── BlueprintCar.jsx        ← Side profile with 3D tilt
+│           ├── RacingCar.jsx           ← Racer with fire trail
+│           ├── Tachometer.jsx          ← Reusable RPM dial
+│           └── EngineDiagram.jsx       ← 4-cylinder cutaway
+│
+└── PROJECT_INFO.txt                    ← You are reading this file.
+
+
+4) PREREQUISITES  (what you MUST install before running)
+--------------------------------------------------------------------------------
+    • Node.js         : v18 or newer
+    • Yarn            : v1.22 or newer   (npm is NOT used)
+    • Python          : v3.11
+    • MongoDB         : running locally on default port 27017
+    • Optional        : A Resend account + API key for contact form email
+                        forwarding (https://resend.com)
+
+
+5) ENVIRONMENT VARIABLES
+--------------------------------------------------------------------------------
+BACKEND — /app/backend/.env
+    MONGO_URL="mongodb://localhost:27017"
+    DB_NAME="test_database"
+    CORS_ORIGINS="*"
+    RESEND_API_KEY=re_xxxxxxxxxxxxxxxxxxxxx    ← from resend.com
+    SENDER_EMAIL=onboarding@resend.dev         ← default test sender
+    CONTACT_RECIPIENT=dhongademanali@gmail.com ← target inbox
+
+FRONTEND — /app/frontend/.env
+    REACT_APP_BACKEND_URL=https://<your-preview-host>
+    WDS_SOCKET_PORT=443
+    ENABLE_HEALTH_CHECK=false
+
+NOTE on Resend:
+    In test mode Resend only delivers to the email address that owns the
+    Resend account. To send to arbitrary recipients you must verify a domain
+    at https://resend.com/domains and change SENDER_EMAIL to an address on
+    that verified domain.
+
+
+6) INSTALL DEPENDENCIES
+--------------------------------------------------------------------------------
+BACKEND
+    cd /app/backend
+    pip install -r requirements.txt
+
+FRONTEND
+    cd /app/frontend
+    yarn install
+
+
+7) HOW TO RUN THE PROJECT
+--------------------------------------------------------------------------------
+Option A — Supervisor (managed environment, auto-restart on file change)
+    sudo supervisorctl restart backend
+    sudo supervisorctl restart frontend
+
+Option B — Manual (local dev)
+    # Terminal 1 — backend
+    cd /app/backend
+    uvicorn server:app --host 0.0.0.0 --port 8001 --reload
+
+    # Terminal 2 — frontend
+    cd /app/frontend
+    yarn start
+
+Then open:
+    Frontend  : http://localhost:3000
+    Backend   : http://localhost:8001/api/
+    Docs      : http://localhost:8001/docs   (Swagger UI)
+
+
+8) API ENDPOINTS
+--------------------------------------------------------------------------------
+    GET   /api/            — Root message
+    GET   /api/health      — Health check
+    POST  /api/contact     — Submit contact form { name, email, message }
+                             Auto-forwards email via Resend + persists to Mongo
+    GET   /api/contact     — List received messages (admin view)
+
+
+9) TESTING
+--------------------------------------------------------------------------------
+Backend
+    curl http://localhost:8001/api/health
+    curl -X POST http://localhost:8001/api/contact \
+        -H "Content-Type: application/json" \
+        -d '{"name":"Test","email":"a@b.com","message":"hi"}'
+
+Frontend
+    yarn build           # production build
+    yarn start           # dev server
+
+
+10) DEPLOYMENT NOTES
+--------------------------------------------------------------------------------
+    • Do NOT hard-code any URL, port or secret. Everything must live in .env.
+    • Backend must bind 0.0.0.0:8001 (supervisor / ingress convention).
+    • All backend routes MUST use the /api prefix.
+    • Frontend must call APIs via process.env.REACT_APP_BACKEND_URL only.
+
+
+================================================================================
+  © 2026 · Rohit Rajendra Dhongade · Portfolio v2026.01
+================================================================================

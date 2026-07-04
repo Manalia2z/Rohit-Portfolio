@@ -1,7 +1,7 @@
 export const rohit = {
   name: "ROHIT RAJENDRA DHONGADE",
   short: "ROHIT DHONGADE",
-  title: "Mechanical Engineer · Automotive Technician",
+  title: "Mechanical Technician · Service Advisor",
   tagline: "Precision Under The Hood. Passion On The Road.",
   location: "Pune / Ahmednagar · Maharashtra, India",
   phone: "7741010715",
@@ -10,7 +10,7 @@ export const rohit = {
     "https://www.linkedin.com/in/rohit-dhongade-96b535254",
   languages: ["English", "Marathi", "Hindi"],
   about: [
-    "Diploma Mechanical Engineer with a focused specialisation in automotive maintenance, diagnostics and workshop operations.",
+    "Diploma Mechanical Engineer focused on a Mechanical Technician / Service Advisor role — bridging the workshop floor and the customer bay.",
     "Hands-on experience across premium and mainstream marques — from Mercedes-Benz service bays in Pune to daily line workflow at Hyundai.",
     "Fast learner, disciplined and quality-obsessed. Fluent in the language of engines, wrenches and torque specs.",
   ],

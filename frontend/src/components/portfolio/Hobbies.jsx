@@ -8,7 +8,7 @@ export default function Hobbies() {
   return (
     <section
       id="hobbies"
-      className="relative py-24 sm:py-32 bg-[#0A0A0A]"
+      className="relative py-24 sm:py-32"
       data-testid="hobbies-section"
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">

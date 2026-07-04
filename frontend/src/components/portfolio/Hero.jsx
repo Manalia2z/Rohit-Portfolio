@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import { rohit, media } from "@/data/rohit";
 import BlueprintCar from "@/components/portfolio/BlueprintCar";
+import RacingCar from "@/components/portfolio/RacingCar";
 import { ArrowDown, Wrench, Gauge, MapPin } from "lucide-react";
 
 export default function Hero() {
@@ -69,7 +70,7 @@ export default function Hero() {
               className="overline text-[#FF3B30] mb-4"
               data-testid="hero-overline"
             >
-              PORTFOLIO / 2026 · MECHANICAL ENGINEER
+              PORTFOLIO / 2026 · MECHANICAL TECHNICIAN · SERVICE ADVISOR
             </motion.p>
 
             <h1
@@ -110,7 +111,7 @@ export default function Hero() {
               className="mt-6 text-[#A1A1AA] text-base sm:text-lg max-w-xl leading-relaxed"
               data-testid="hero-tagline"
             >
-              {rohit.tagline} A diploma mechanical engineer trained across Mercedes-Benz & Hyundai service floors — obsessed with clean diagnostics, sharp torque and precise repairs.
+              {rohit.tagline} A diploma mechanical engineer trained across Mercedes-Benz & Hyundai service floors — ready to step in as a Mechanical Technician or Service Advisor with clean diagnostics, sharp torque and precise repairs.
             </motion.p>
 
             <motion.div
@@ -207,12 +208,30 @@ export default function Hero() {
           </motion.div>
         </div>
 
+        {/* Racing car with fire */}
+        <motion.div
+          initial={{ opacity: 0, x: -60 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 1.4, duration: 0.8 }}
+          className="mt-20"
+        >
+          <div className="flex items-center gap-4 mb-4">
+            <span className="overline text-[#FF3B30]">TRACK / LIVE FEED · 07</span>
+            <div className="flex-1 h-px bg-[#27272A]" />
+            <span className="overline text-[#71717A]">TURN 03 / DRS OPEN</span>
+          </div>
+          <div className="relative card-industrial p-6 overflow-hidden">
+            <div className="absolute inset-0 bg-grid opacity-30 pointer-events-none" />
+            <RacingCar className="relative z-10" />
+          </div>
+        </motion.div>
+
         {/* Blueprint car below */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.6, duration: 0.8 }}
-          className="mt-20"
+          className="mt-12"
         >
           <div className="flex items-center gap-4 mb-4">
             <span className="overline text-[#71717A]">BLUEPRINT / SIDE PROFILE · 1:24</span>

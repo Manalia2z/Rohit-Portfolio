@@ -17,9 +17,9 @@ const SectionHeader = ({ code, title, right }) => (
 
 export default function About() {
   return (
-    <section id="about" className="relative py-24 sm:py-32 bg-[#0A0A0A]" data-testid="about-section">
+    <section id="about" className="relative py-24 sm:py-32" data-testid="about-section">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
-        <SectionHeader code="02 / PROFILE" title="About The Mechanic" right="PROFILE.INIT" />
+        <SectionHeader code="02 / PROFILE" title="About Rohit" right="PROFILE.INIT" />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           <motion.div

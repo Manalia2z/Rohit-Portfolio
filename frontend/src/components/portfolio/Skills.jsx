@@ -6,7 +6,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="relative py-24 sm:py-32 bg-[#0A0A0A] overflow-hidden"
+      className="relative py-24 sm:py-32 overflow-hidden"
       data-testid="skills-section"
     >
       <div className="absolute inset-0 bg-grid opacity-30 mask-radial-fade pointer-events-none" />

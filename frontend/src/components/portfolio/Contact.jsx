@@ -32,7 +32,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative py-24 sm:py-32 bg-[#0A0A0A] overflow-hidden"
+      className="relative py-24 sm:py-32 overflow-hidden"
       data-testid="contact-section"
     >
       <div className="absolute inset-0 bg-grid opacity-40 mask-radial-fade pointer-events-none" />
@@ -46,7 +46,7 @@ export default function Contact() {
             <span className="text-[#FF3B30]">Something.</span>
           </h2>
           <p className="mt-6 text-[#A1A1AA] max-w-xl mx-auto">
-            Looking for a mechanic who takes the job card seriously? Reach out — service bays open.
+            Looking for a Mechanical Technician / Service Advisor who takes the job card seriously? Reach out — service bays open.
           </p>
         </div>
 

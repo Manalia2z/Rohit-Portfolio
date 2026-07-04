@@ -6,7 +6,7 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="relative py-24 sm:py-32 bg-[#0A0A0A] overflow-hidden"
+      className="relative py-24 sm:py-32 overflow-hidden"
       data-testid="experience-section"
     >
       {/* Engine background layer */}
